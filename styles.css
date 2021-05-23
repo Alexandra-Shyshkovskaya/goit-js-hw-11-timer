@@ -1,0 +1,54 @@
+body {
+  background-color: rgb(158, 218, 241);
+}
+h1 {
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-weight: normal;
+  font-family: "Ultra", sans-serif;
+  font-size: 36px;
+  line-height: 42px;
+  text-transform: uppercase;
+  text-shadow: 0 2px white, 0 3px #777;
+  text-align: center;
+}
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.field {
+  display: inline-block;
+}
+.value {
+  display: inline-block;
+  font-size: 50px;
+  background: #4dadf7;
+  color: #ffffff;
+  line-height: 70px;
+  width: 60px;
+  margin: 0 1px;
+  border-radius: 2px;
+  text-align: center;
+}
+.label {
+  display: block;
+  background: none;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 30px;
+  width: auto;
+  margin: 0;
+  text-align: center;
+}
+.delimetr {
+  display: inline-flex;
+  vertical-align: top;
+  font-size: 50px;
+  line-height: 50px;
+  justify-content: center;
+  margin: 0 10px;
+  align-items: center;
+  color: pink;
+}
