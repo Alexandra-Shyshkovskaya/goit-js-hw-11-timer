@@ -1,12 +1,9 @@
 class CountdownTimer {
   constructor({ selector, targetDate }) {
-    this.selector = selector;
+    this.selector = document.querySelector(`${selector}`);
     this.targetDate = targetDate.getTime();
-    this.days = document.querySelector(`${this.selector} span[data-value="days"]`);
-    this.hours = document.querySelector(`${this.selector} span[data-value="hours"]`);
-    this.mins = document.querySelector(`${this.selector} span[data-value="mins"]`);
-    this.secs = document.querySelector(`${this.selector} span[data-value="secs"]`);
     this.start();
+    
   }
 
   timerUpdate(time) {
@@ -26,18 +23,26 @@ class CountdownTimer {
       .toString()
       .padStart(2, "0");
 
-    this.days.textContent = days;
-    this.hours.textContent = hours;
-    this.mins.textContent = mins;
-    this.secs.textContent = secs;
+    this.selector.querySelector('[data-value="days"]').textContent = days;
+    this.selector.querySelector('[data-value="hours"]').textContent = hours;
+    this.selector.querySelector('[data-value="mins"]').textContent = mins;
+    this.selector.querySelector('[data-value="secs"]').textContent = secs;
   }
 
   start() {
-    setInterval(() => {
-      const delta = this.targetDate - Date.now();
+   this.intervalId = setInterval(() => {
+      let delta = this.targetDate - Date.now();
       this.timerUpdate(delta);
     }, 1000);
   }
+   finish() {
+     if (delta < 0) {
+    
+      clearInterval(this.intervalId);
+    }
+    
+  }
+   
 }
 
 const timer = new CountdownTimer({
