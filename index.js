@@ -3,7 +3,7 @@ class CountdownTimer {
     this.selector = document.querySelector(`${selector}`);
     this.targetDate = targetDate.getTime();
     this.start();
-    
+    this.finish();
   }
 
   timerUpdate(time) {
