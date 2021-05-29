@@ -2,6 +2,7 @@ class CountdownTimer {
   constructor({ selector, targetDate }) {
     this.selector = document.querySelector(`${selector}`);
     this.targetDate = targetDate.getTime();
+    this.intervalId = null;
     this.start();
     this.finish();
   }
@@ -35,10 +36,10 @@ class CountdownTimer {
       this.timerUpdate(delta);
     }, 1000);
   }
-   finish() {
+  finish() {
+     let delta = this.targetDate - Date.now();
      if (delta < 0) {
-    
-      clearInterval(this.intervalId);
+     clearInterval(this.intervalId);
     }
     
   }
